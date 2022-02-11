@@ -23,7 +23,7 @@ printf '\n---- INSTALLING LATEST NEXTFLOW VERSION\n'
 module load anaconda3/personal
 conda install -yqc bioconda nextflow
 printf '\n---- RUNNING IMPERIAL COLLEGE NEXTFLOW NF-CORE CANARY PIPELINE\n'
-nextflow run ./main.nf -c $CONFIGPATH
+nextflow run ./main.nf -c $CONFIGPATH -profile standard
 if [[ ! -f OK.txt ]] ; then
     printf "\nERROR: The canary pipeline did not complete succesfully, check logs.\n"
     exit
